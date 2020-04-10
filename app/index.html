@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <title>xpzheng's app</title>
+</head>
+<body>
+    <div class="app">
+        <header></header>
+        <main>
+            <div id="apps" class="columns is-vcentered is-multiline">
+                <div class="column is-3">
+                    <div class="card animated fadeInUp app-card" data-href="http://wm.xpzheng.xyz">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="image/watermark.jpg" alt="水印">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="subtitle">万物皆水印工具</div>
+                            <div class="content is-small">一款可以为图片、视频、pdf、word文档添加水印的工具，你可以在线设计你想要的水印效果。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="card animated fadeInUp app-card" data-href="http://ncov.xpzheng.xyz">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="image/ncov.jpg" alt="2019 ncov疫情分析">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="subtitle">2019 ncov疫情分析</div>
+                            <div class="content is-small">2019新冠肺炎疫情分析</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var apps = document.querySelector('#apps')
+        apps.addEventListener('click', function(e) {
+            var el = e.target
+            while(el != null && !el.classList.contains('app-card')) {
+                el = el.parentNode
+            }
+            var href = el.getAttribute('data-href')
+            if (href) {
+                location.href = href
+            }
+        }, true)
+    </script>
+    
+    
+</body>
+</html>
